@@ -53,7 +53,8 @@ var packagePlatformJson = {
         "jquery": "^2.1.0",
         "knockout": "^3.4.0",
         "bootstrap": "^3.3.6",
-        "ace-builds": "^1.2.2"
+        "ace-builds": "^1.2.2",
+	    "surveyjs": "colvir/surveyjs"
     },
     "devDependencies": {
         "@types/knockout": "^3.4.0"
@@ -71,7 +72,7 @@ module.exports = function(options) {
             if (options.buildType === "prod") {
                 dts.bundle({
                     name: '../../surveyeditor',
-                    main: packagePath + 'typings/entries/index.d.ts',
+                    main: packagePath + 'typings/src/entries/index.d.ts',
                     outputAsModuleFolder: true,
                     headerText: dts_banner
                 });

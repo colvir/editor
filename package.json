@@ -10,7 +10,8 @@
   "dependencies": {
     "jquery": "^2.1.0",
     "knockout": "^3.4.0",
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "surveyjs": "colvir/surveyjs"
   },
   "devDependencies": {
     "@types/ace": "0.0.32",

@@ -69,6 +69,25 @@ export class SurveyPropertyExpressionEditor extends SurveyPropertyTextEditor {
     public get editorType(): string { return "expression"; }
 }
 
+export class SurveyPropertySetExpressionEditor extends SurveyPropertyTextEditor {
+    public koText: any;
+    constructor() {
+        super();
+    }
+
+    public getValueText(value: any): string {
+        if (!value) return null;
+        var str = value;
+        if (str.length > 20) {
+            str = str.substr(0, 20) + "...";
+        }
+        return str;
+    }
+
+    public get editorType(): string { return "setexpression"; }
+}
+
 SurveyPropertyEditorBase.registerEditor("text", function (): SurveyPropertyEditorBase { return new SurveyPropertyTextEditor(); });
 SurveyPropertyEditorBase.registerEditor("html", function (): SurveyPropertyEditorBase { return new SurveyPropertyHtmlEditor(); });
 SurveyPropertyEditorBase.registerEditor("expression", function (): SurveyPropertyEditorBase { return new SurveyPropertyExpressionEditor(); });
+SurveyPropertyEditorBase.registerEditor("setexpression", function (): SurveyPropertyEditorBase { return new SurveyPropertySetExpressionEditor(); });
