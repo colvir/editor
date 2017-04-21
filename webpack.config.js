@@ -50,7 +50,6 @@ var packagePlatformJson = {
     },
     'typings': 'surveyeditor.d.ts',
     "dependencies": {
-        "survey-knockout": "^" + packageJson.version,
         "jquery": "^2.1.0",
         "knockout": "^3.4.0",
         "bootstrap": "^3.3.6",
@@ -89,7 +88,8 @@ module.exports = function(options) {
         resolve: {
             extensions: ['.ts', '.tsx', '.scss'],
             alias: {
-                tslib:  path.join(__dirname, './src/entries/helpers.ts')
+                tslib:  path.join(__dirname, './src/entries/helpers.ts'),
+	            'survey-knockout': path.join(__dirname, './node_modules/surveyjs/src/entries/knockout.ts')
             }
         },
         module: {
@@ -148,12 +148,6 @@ module.exports = function(options) {
                 commonjs2: 'bootstrap',
                 commonjs: 'bootstrap',
                 amd: 'bootstrap'
-            },
-            'survey-knockout': {
-                root: 'Survey',
-                commonjs2: 'survey-knockout',
-                commonjs: 'survey-knockout',
-                amd: 'survey-knockout'
             }
         },
         plugins: [
